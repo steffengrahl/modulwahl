@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section>
+        <form method="post" action="" id="courseform">
+            <div class="course-wrapper">
+                {% for course in courses %}
+                <div class="course-button{% if 0 == course.assignable %} course-notassignable{% endif %}">
+                    <input
+                            type="checkbox"
+                            name="course[]"
+                            value="{{ course.id }}"
+                            class="out-of-sight"
+                            id="course_{{ course.id }}"
+                            {% if course.selected == 1 %} checked{% endif %}
+                    >
+                    <label
+                            for="course_{{ course.id }}"
+                            class="course-label{% if 0 == course.wpf %} course-wpf{% endif %}"
+                    >
+                        <span class="course-name">{{ course.name }}</span>
+                        <span class="course-semester">{{ course.semester }}</span>
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+            <aside class="settings">
+                <div class="settings-box">
+                    <h3 class="settings-box-title">Legende</h3>
+                    <ul class="legend">
+                        <li class="legend-item">
+                            <span class="legend-color legend-color-white">&nbsp;</span>
+                            <span class="legend-label">Pflichtmodul</span>
+                        </li>
+                        <li class="legend-item">
+                            <span class="legend-color legend-color-white course-notassignable">&nbsp;</span>
+                            <span class="legend-label">nicht dieses Semester<!-- angeboten --></span>
+                        </li>
+                        <li class="legend-item">
+                            <span class="legend-color legend-color-grey">&nbsp;</span>
+                            <span class="legend-label">Wahlpflichtmodul</span>
+                        </li>
+                        <li class="legend-item">
+                            <span class="legend-color legend-color-teal">&nbsp;</span>
+                            <span class="legend-label">Modul bestanden</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </form>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#courseform").on("change", 'input[type="checkbox"]', function(){
+            $(this).closest("form").submit();
+        });
+    </script>
+{% endblock %}

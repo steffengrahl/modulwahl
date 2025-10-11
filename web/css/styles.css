@@ -1,0 +1,186 @@
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.125em;
+    font-family: sans-serif;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 200;
+    margin: 0 0 .5em 0;
+    padding: .5em 0;
+}
+p, ul, ol {
+    margin-bottom: 1em;
+}
+section {
+    margin-bottom: 4em;
+}
+.heart {
+    color: red;
+}
+
+/* fixed sidebar layout */
+/* sidebar */
+body::before {
+    content: ' ';
+    display: block;
+    width: 1px;
+    position: fixed;
+    top: 0;
+    left: 239px;
+    bottom: 0;
+    border-right: 1px solid lightgray;
+}
+.page-header,
+.settings,
+.page-footer {
+    position: fixed;
+    left: 0;
+    width: 240px;
+}
+.page-header {
+    top: 0;
+    border-bottom: 1px solid lightgray;
+}
+.settings {
+    top: 115px;
+    bottom: 2em;
+    overflow-y: scroll;
+}
+.page-footer {
+    bottom: 0px;
+}
+
+/* settings */
+.settings {}
+.settings-box {}
+.settings-box-title {
+    padding: 1em;
+    padding-bottom: 0;
+    text-transform: uppercase;
+}
+.legend {
+    margin: 0;
+    padding: 1em;
+    list-style-type: none;
+}
+.legend-item {
+    margin-bottom: 1px;
+}
+.legend-color {
+    width: .5em;
+    display: inline-block;
+    margin-right: .5em;
+    border: 1px solid lightgrey;
+}
+.legend-color-grey {
+    background-color: lightgrey;
+}
+.legend-color-teal {
+    background-color: teal;
+}
+.legend-color-white {
+    background-color: white;
+}
+.legend-label {
+    font-size: .875em;
+    font-weight: 600;
+}
+
+/* page-header */
+.page-title-wrapper {
+    margin: 1.5em .5em;
+}
+.page-title {
+    margin: 0;
+    padding: 0;
+    font-size: 1.75em;
+}
+.page-title .home {
+    display: block;
+    margin-bottom: .25em;
+    text-align: center;
+}
+.page-subtitle {
+    font-size: 1.0em;
+    text-align: center;
+}
+
+/* content */
+.page-content {
+    margin-left: 240px;
+    padding: 1em;
+}
+
+/* course-button */
+.course-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.course-button {
+    display: inline-block;
+    width: 240px;
+    height: 90px;
+    padding: .5em;
+}
+.course-label {
+    display: flex;
+    height: 100%;
+    border: 1px solid lightgrey;
+    position: relative;
+}
+.course-name {
+    display: inline-block;
+    margin: auto;
+    font-size: .875em;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+.course-semester {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: .6875em;
+    letter-spacing: .05em;
+    line-height: 1em;
+    padding: .075em .125em;
+}
+.course-wpf {
+    background-color: lightgrey;
+}
+.course-notassignable {
+    /*border-color: red;*/
+    opacity: .25;
+}
+input[type=checkbox]:checked ~ .course-label {
+    background-color: teal;
+    border-color: lightgrey;
+}
+input[type=checkbox]:checked ~ .course-label .course-name,
+input[type=checkbox]:checked ~ .course-label .course-semester {
+    color: white;
+}
+
+/* page-footer */
+.page-footer {
+    text-align: center;
+    font-size: .875em;
+}
+.page-footer a {
+    text-decoration: underline;
+}
+/* [END] fixed sidebar layout */
+.out-of-sight {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
+}

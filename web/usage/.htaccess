@@ -1,0 +1,5 @@
+AuthUserFile /www/htdocs/w01e6742/privat/hsel/modulwahl/web/usage/.htpasswd
+AuthGroupFile /dev/null
+AuthName 'ByPassword'
+AuthType Basic
+require valid-user
