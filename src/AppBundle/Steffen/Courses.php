@@ -6,7 +6,7 @@
  * Time: 10:44
  */
 
-namespace AppBundle\Steffen;
+namespace src\AppBundle\Steffen;
 
 
 class Courses

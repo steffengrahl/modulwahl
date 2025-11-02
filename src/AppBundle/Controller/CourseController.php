@@ -6,11 +6,11 @@
  * Time: 20:40
  */
 
-namespace AppBundle\Controller;
+namespace src\AppBundle\Controller;
 
-use AppBundle\Steffen\Courses;
-use AppBundle\Steffen\Semester;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use src\AppBundle\Steffen\Courses;
+use src\AppBundle\Steffen\Semester;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
