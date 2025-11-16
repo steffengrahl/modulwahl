@@ -9,7 +9,7 @@ class Courses
     private $csv
         = [
             [
-                'id' => 1,
+                'id' => '1',
                 'abbr' => "ADS",
                 'name' => "Algorithmen & Datenstrukturen",
                 'compulsory' => 1,
@@ -23,7 +23,7 @@ class Courses
                 'lecture_mandatory' => 1,
             ],
             [
-                'id' => 2,
+                'id' => '2',
                 'abbr' => "BWL",
                 'name' => "Betriebswirtschaftslehre",
                 'compulsory' => 1,
@@ -37,7 +37,7 @@ class Courses
                 'lecture_mandatory' => 2,
             ],
             [
-                'id' => 3,
+                'id' => '3',
                 'abbr' => "CAB(S)",
                 'name' => "Computerarchitektur & Betriebssysteme",
                 'compulsory' => 1,
@@ -51,7 +51,7 @@ class Courses
                 'lecture_mandatory' => 1,
             ],
             [
-                'id' => 4,
+                'id' => '4',
                 'abbr' => "CG",
                 'name' => "Computergrafik",
                 'compulsory' => 1,
@@ -65,7 +65,7 @@ class Courses
                 'lecture_mandatory' => 1,
             ],
             [
-                'id' => 5,
+                'id' => '5',
                 'abbr' => "DB",
                 'name' => "Datenbanken",
                 'compulsory' => 1,
@@ -79,7 +79,7 @@ class Courses
                 'lecture_mandatory' => 2,
             ],
             [
-                'id' => 6,
+                'id' => '6',
                 'abbr' => "EI",
                 'name' => "Einführung in die Informatik",
                 'compulsory' => 1,
@@ -93,7 +93,7 @@ class Courses
                 'lecture_mandatory' => 2,
             ],
             [
-                'id' => 7,
+                'id' => '7',
                 'abbr' => "EWP",
                 'name' => "Einführung in die wiss. Projektarbeit",
                 'compulsory' => 1,
@@ -107,7 +107,7 @@ class Courses
                 'lecture_mandatory' => 1,
             ],
             [
-                'id' => 8,
+                'id' => '8',
                 'abbr' => "GIS",
                 'name' => "Grundlagen der IT-Sicherheit",
                 'compulsory' => 1,
@@ -121,7 +121,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 9,
+                'id' => '9',
                 'abbr' => "GP1",
                 'name' => "Grundlagen der Programmierung 1",
                 'compulsory' => 1,
@@ -135,7 +135,7 @@ class Courses
                 'lecture_mandatory' => 2,
             ],
             [
-                'id' => 10,
+                'id' => '10',
                 'abbr' => "GP2",
                 'name' => "Grundlagen der Programmierung 2",
                 'compulsory' => 1,
@@ -149,7 +149,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 11,
+                'id' => '11',
                 'abbr' => "IMG",
                 'name' => "Internetanwendungen für mobile Geräte",
                 'compulsory' => 1,
@@ -163,7 +163,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 12,
+                'id' => '12',
                 'abbr' => "INM",
                 'name' => "Informationsmanagement",
                 'compulsory' => 1,
@@ -177,7 +177,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 13,
+                'id' => '13',
                 'abbr' => "ISP",
                 'name' => "Internet-Serverprogrammierung",
                 'compulsory' => 1,
@@ -191,7 +191,7 @@ class Courses
                 'lecture_mandatory' => 2,
             ],
             [
-                'id' => 14,
+                'id' => '14',
                 'abbr' => "ITR",
                 'name' => "IT-Recht",
                 'compulsory' => 1,
@@ -205,7 +205,7 @@ class Courses
                 'lecture_mandatory' => 1,
             ],
             [
-                'id' => 15,
+                'id' => '15',
                 'abbr' => "KFS",
                 'name' => "Kommunikation, Führung und Selbstmanagement",
                 'compulsory' => 1,
@@ -219,7 +219,7 @@ class Courses
                 'lecture_mandatory' => 3,
             ],
             [
-                'id' => 16,
+                'id' => '16',
                 'abbr' => "KN1",
                 'name' => "Kommunikationsnetze 1",
                 'compulsory' => 1,
@@ -233,7 +233,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 17,
+                'id' => '17',
                 'abbr' => "LA",
                 'name' => "Lineare Algebra",
                 'compulsory' => 1,
@@ -247,7 +247,7 @@ class Courses
                 'lecture_mandatory' => 1,
             ],
             [
-                'id' => 18,
+                'id' => '18',
                 'abbr' => "MCK",
                 'name' => "Mensch-Computer-Kommunikation",
                 'compulsory' => 1,
@@ -261,7 +261,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 19,
+                'id' => '19',
                 'abbr' => "MD1",
                 'name' => "Mediendesign 1",
                 'compulsory' => 1,
@@ -275,7 +275,7 @@ class Courses
                 'lecture_mandatory' => 1,
             ],
             [
-                'id' => 20,
+                'id' => '20',
                 'abbr' => "MD2",
                 'name' => "Mediendesign 2",
                 'compulsory' => 1,
@@ -289,7 +289,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 21,
+                'id' => '21',
                 'abbr' => "MMT",
                 'name' => "Multimediatechnik",
                 'compulsory' => 1,
@@ -303,7 +303,7 @@ class Courses
                 'lecture_mandatory' => 2,
             ],
             [
-                'id' => 22,
+                'id' => '22',
                 'abbr' => "PFW",
                 'name' => "Pattern & Frameworks",
                 'compulsory' => 1,
@@ -317,7 +317,7 @@ class Courses
                 'lecture_mandatory' => 1,
             ],
             [
-                'id' => 23,
+                'id' => '23',
                 'abbr' => "RF",
                 'name' => "Relationen & Funktionen",
                 'compulsory' => 1,
@@ -331,7 +331,7 @@ class Courses
                 'lecture_mandatory' => 2,
             ],
             [
-                'id' => 24,
+                'id' => '24',
                 'abbr' => "SWT",
                 'name' => "Softwaretechnik",
                 'compulsory' => 1,
@@ -345,7 +345,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 25,
+                'id' => '25',
                 'abbr' => "TI",
                 'name' => "Theoretische Informatik",
                 'compulsory' => 1,
@@ -359,7 +359,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 26,
+                'id' => '26',
                 'abbr' => "WEB",
                 'name' => "Web-Programmierung",
                 'compulsory' => 1,
@@ -373,7 +373,7 @@ class Courses
                 'lecture_mandatory' => 1,
             ],
             [
-                'id' => 27,
+                'id' => '27',
                 'abbr' => "AAM",
                 'name' => "Anforderungsanalyse und Modellierung",
                 'compulsory' => 0,
@@ -387,7 +387,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 28,
+                'id' => '28',
                 'abbr' => "AKB",
                 'name' => "Ausgewählte Kapitel zu Betriebssystemen",
                 'compulsory' => 0,
@@ -401,7 +401,7 @@ class Courses
                 'lecture_mandatory' => 1,
             ],
             [
-                'id' => 29,
+                'id' => '29',
                 'abbr' => "BBV",
                 'name' => "Bildbearbeitung und -verarbeitung",
                 'compulsory' => 0,
@@ -415,7 +415,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 30,
+                'id' => '30',
                 'abbr' => "CMS",
                 'name' => "Content-Management-Systeme",
                 'compulsory' => 0,
@@ -429,7 +429,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 31,
+                'id' => '31',
                 'abbr' => "CPP",
                 'name' => "Programmierung in C++",
                 'compulsory' => 0,
@@ -443,7 +443,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 32,
+                'id' => '32',
                 'abbr' => "EPM",
                 'name' => "Einführung Projektmanagement",
                 'compulsory' => 0,
@@ -457,7 +457,7 @@ class Courses
                 'lecture_mandatory' => 2,
             ],
             [
-                'id' => 33,
+                'id' => '33',
                 'abbr' => "GVW",
                 'name' => "Grundlagen virtueller Welten",
                 'compulsory' => 0,
@@ -471,7 +471,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 34,
+                'id' => '34',
                 'abbr' => "KN2",
                 'name' => "Kommunikationsnetze 2",
                 'compulsory' => 0,
@@ -485,7 +485,7 @@ class Courses
                 'lecture_mandatory' => 2,
             ],
             [
-                'id' => 35,
+                'id' => '35',
                 'abbr' => "MWK",
                 'name' => "Medienwirtschaft & Kommunikationspolitik",
                 'compulsory' => 0,
@@ -499,7 +499,7 @@ class Courses
                 'lecture_mandatory' => 1,
             ],
             [
-                'id' => 36,
+                'id' => '36',
                 'abbr' => "OOS",
                 'name' => "Objektorientierte Skriptsprachen",
                 'compulsory' => 0,
@@ -513,7 +513,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 37,
+                'id' => '37',
                 'abbr' => "RMA",
                 'name' => "Rich-Media-Anwendungen",
                 'compulsory' => 0,
@@ -527,7 +527,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 38,
+                'id' => '38',
                 'abbr' => "SMDA",
                 'name' => "Sicherheit von Mediendaten & -anwendungen",
                 'compulsory' => 0,
@@ -541,7 +541,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 39,
+                'id' => '39',
                 'abbr' => "TEE",
                 'name' => "Technisches Englisch",
                 'compulsory' => 0,
@@ -555,7 +555,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 40,
+                'id' => '40',
                 'abbr' => "PRO",
                 'name' => "Projekt",
                 'compulsory' => 1,
@@ -569,7 +569,7 @@ class Courses
                 'lecture_mandatory' => 0,
             ],
             [
-                'id' => 41,
+                'id' => '41',
                 'abbr' => "BA",
                 'name' => "Bachlor",
                 'compulsory' => 1,
@@ -591,7 +591,7 @@ class Courses
         $cond_delimiter = ',';
         $get_conditions = ['0'];
 
-        if (!empty($selected_courses)) {
+        if ($selected_courses !== []) {
             $get_conditions = array_merge($get_conditions, $selected_courses);
         }
 
@@ -599,6 +599,9 @@ class Courses
             $ws = '-';
             $ss = '-';
             $assignable = 0;
+
+//            dump($iValue['conditions'], $get_conditions);
+//            dump(count(array_diff(explode($cond_delimiter, $iValue['conditions']), $get_conditions)) === 0);
 
             if (count(array_diff(explode($cond_delimiter, $iValue['conditions']), $get_conditions)) === 0) {
                 $selected = (in_array($iValue['id'], $get_conditions, true)) ? '1' : '0';

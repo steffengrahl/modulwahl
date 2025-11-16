@@ -21,12 +21,12 @@ class CourseController extends AbstractController
         $courses = new Courses();
         $selected_courses = $request->request->get('course');
 
-        if (empty($selected_courses)) {
+        if ($selected_courses === []) {
             $selected_courses = ['0'];
         }
 
         $semester = new Semester();
-        $page_subtitle = 'Sommersemester \'' . $semester->getYear();
+        $page_subtitle = 'Sommersemester ' . $semester->getYear();
 
         if ($semester->getCurrent() === 'ws') {
             $page_subtitle = sprintf(
