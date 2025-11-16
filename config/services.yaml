@@ -17,7 +17,6 @@ services:
   App\:
     resource: '../src/'
     exclude:
-      - '../src/AppBundle/'
       - '../src/DependencyInjection/'
       - '../src/Entity/'
       - '../src/Kernel.php'
@@ -26,16 +25,6 @@ services:
   # as action arguments even if you don't extend any base controller class
   App\Controller\:
     resource: '../src/Controller/'
-    tags: [ 'controller.service_arguments' ]
-
-
-  AppBundle\:
-    resource: '../src/AppBundle/*'
-    exclude: '../src/AppBundle/{Entity,Repository,Tests}'
-
-  AppBundle\Controller\:
-    resource: '../src/AppBundle/Controller'
-    public: true
     tags: [ 'controller.service_arguments' ]
 
   # add more service definitions when explicit configuration is needed

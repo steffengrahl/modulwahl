@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AppBundle\Steffen;
+namespace App\Steffen;
 
 use DateTime;
 

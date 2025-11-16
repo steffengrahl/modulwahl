@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace AppBundle\Controller;
+namespace App\Controller;
 
-use AppBundle\Steffen\Courses;
-use AppBundle\Steffen\Semester;
+use App\Steffen\Courses;
+use App\Steffen\Semester;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
