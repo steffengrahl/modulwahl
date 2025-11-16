@@ -1,47 +1,47 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: w01e6742rahl
- * Date: 09.08.17
- * Time: 20:40
- */
+
+declare(strict_types=1);
 
 namespace AppBundle\Controller;
 
 use AppBundle\Steffen\Courses;
 use AppBundle\Steffen\Semester;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
-class CourseController extends Controller
+class CourseController extends AbstractController
 {
     /**
      * @Route("/")
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showCourseSelector(Request $request)
+    public function showCourseSelector(Request $request): Response
     {
-        // $courses = $this->get('app.courses')->fetch($request->request->get('course'));
         $courses = new Courses();
         $selected_courses = $request->request->get('course');
-        if (empty($selected_courses))
-        {
-            $selected_courses = array('0');
+
+        if (empty($selected_courses)) {
+            $selected_courses = ['0'];
         }
 
         $semester = new Semester();
         $page_subtitle = 'Sommersemester \'' . $semester->getYear();
 
-        if ($semester->getCurrent() === 'ws')
-        {
-            $page_subtitle = 'Wintersemester \'' . $semester->getYear() . '/' . ($semester->getYear() + 1);
+        if ($semester->getCurrent() === 'ws') {
+            $page_subtitle = sprintf(
+                'Wintersemester %s/%s',
+                $semester->getYear(),
+                ($semester->getYear() + 1)
+            );
         }
 
-        return $this->render('course/form.html.twig', [
-            'page_subtitle' => $page_subtitle,
-            'courses' => $courses->fetch($selected_courses, $semester->getCurrent())
-        ]);
+        return $this->render(
+            'course/form.html.twig',
+            [
+                'page_subtitle' => $page_subtitle,
+                'courses' => $courses->fetch($selected_courses, $semester->getCurrent()),
+            ]
+        );
     }
 }
