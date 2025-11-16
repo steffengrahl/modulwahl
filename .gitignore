@@ -6,3 +6,4 @@ var/bootstrap.php.cache
 var/SymfonyRequirements.php
 web/config.php
 var/cache
+var/logs
