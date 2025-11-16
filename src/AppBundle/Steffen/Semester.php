@@ -6,7 +6,7 @@
  * Time: 18:24
  */
 
-namespace src\AppBundle\Steffen;
+namespace AppBundle\Steffen;
 
 
 use DateTime;

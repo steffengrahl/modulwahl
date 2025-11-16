@@ -2,7 +2,7 @@
 
 namespace app;
 
-use AppBundle;
+use AppBundle\AppBundle;
 use Doctrine;
 use Sensio;
 use Symfony;
@@ -28,7 +28,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new \src\AppBundle\AppBundle(),
+            new AppBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
