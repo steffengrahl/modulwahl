@@ -1,2 +1,7 @@
 /vendor
 .env
+composer.lock
+app/config/parameters.yml
+var/bootstrap.php.cache
+var/SymfonyRequirements.php
+web/config.php
