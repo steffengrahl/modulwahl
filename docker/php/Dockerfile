@@ -6,7 +6,6 @@ RUN sed -i 's|deb.debian.org|archive.debian.org|g' /etc/apt/sources.list \
     && echo "Acquire::Check-Valid-Until false;" > /etc/apt/apt.conf.d/99no-check-valid \
     && apt-get update
 
-# Install system dependencies
 RUN apt-get install -y \
     git \
     unzip \
@@ -17,16 +16,12 @@ RUN apt-get install -y \
     libzip-dev \
     && docker-php-ext-install intl pdo pdo_mysql zip opcache
 
-# Install Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php --version=2.2.9 --install-dir=/usr/bin --filename=composer \
+    && rm composer-setup.php
 
-# Set working directory
 WORKDIR /var/www/html
 
-# Copy application
-COPY . /var/www/html
-
-# Set permissions
 RUN chown -R www-data:www-data /var/www/html
 
 COPY docker/php/php.ini /usr/local/etc/php/
