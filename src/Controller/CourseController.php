@@ -6,7 +6,7 @@ namespace App\Controller;
 
 use App\Steffen\Courses;
 use App\Steffen\Semester;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,11 +19,7 @@ class CourseController extends AbstractController
     public function showCourseSelector(Request $request): Response
     {
         $courses = new Courses();
-        $selected_courses = $request->request->get('course');
-
-        if ($selected_courses === []) {
-            $selected_courses = ['0'];
-        }
+        $selected_courses = $request->request->get('course', [0]);
 
         $semester = new Semester();
         $page_subtitle = 'Sommersemester ' . $semester->getYear();
