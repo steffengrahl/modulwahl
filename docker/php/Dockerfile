@@ -1,10 +1,11 @@
-FROM php:7.2-fpm
+FROM php:7.4-fpm
 
 # Switch to archived Debian repositories (since buster is EOL)
-RUN sed -i 's|deb.debian.org|archive.debian.org|g' /etc/apt/sources.list \
-    && sed -i '/security.debian.org/d' /etc/apt/sources.list \
-    && echo "Acquire::Check-Valid-Until false;" > /etc/apt/apt.conf.d/99no-check-valid \
-    && apt-get update
+#RUN sed -i 's|deb.debian.org|archive.debian.org|g' /etc/apt/sources.list \
+#    && sed -i '/security.debian.org/d' /etc/apt/sources.list \
+#    && echo "Acquire::Check-Valid-Until false;" > /etc/apt/apt.conf.d/99no-check-valid \
+#    && apt-get update
+RUN apt-get update
 
 RUN apt-get install -y \
     git \

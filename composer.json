@@ -13,7 +13,7 @@
     }
   },
   "require": {
-    "php": "7.2.*",
+    "php": "7.4.*",
     "doctrine/doctrine-bundle": "2.0.*",
     "doctrine/orm": "^2.7",
     "symfony/apache-pack": "^1.0",
