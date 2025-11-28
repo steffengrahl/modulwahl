@@ -634,12 +634,6 @@ class Courses
 
     private function sort(): void
     {
-        usort($this->csv, static function ($a, $b) {
-            if ($a["semester"] === $b["semester"]) {
-                return 0;
-            }
-
-            return ($a["semester"] < $b["semester"]) ? -1 : 1;
-        });
+        usort($this->csv, static fn($a, $b) => $a["semester"] <=> $b["semester"]);
     }
 }

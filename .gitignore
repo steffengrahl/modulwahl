@@ -9,7 +9,6 @@ var/cache
 var/logs
 
 ###> symfony/phpunit-bridge ###
-.phpunit
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
@@ -25,3 +24,7 @@ var/logs
 ###< symfony/framework-bundle ###
 
 .idea
+
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###
