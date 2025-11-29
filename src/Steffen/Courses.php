@@ -600,9 +600,6 @@ class Courses
             $ss = '-';
             $assignable = 0;
 
-//            dump($iValue['conditions'], $get_conditions);
-//            dump(count(array_diff(explode($cond_delimiter, $iValue['conditions']), $get_conditions)) === 0);
-
             if (count(array_diff(explode($cond_delimiter, $iValue['conditions']), $get_conditions)) === 0) {
                 $selected = (in_array($iValue['id'], $get_conditions, true)) ? '1' : '0';
 

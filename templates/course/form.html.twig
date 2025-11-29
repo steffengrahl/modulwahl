@@ -1,57 +1,60 @@
 {% extends 'base.html.twig' %}
 
+{% set courseLabelCssClass = 'course-label' %}
+
 {% block body %}
     <section>
-        <form method="post" action="" id="courseform">
+        <form action="" method="post" id="courseform">
             <div class="course-wrapper">
-                {% for course in courses %}
-                <div class="course-button{% if 0 == course.assignable %} course-notassignable{% endif %}">
-                    <input
-                            type="checkbox"
-                            name="course[]"
-                            value="{{ course.id }}"
-                            class="out-of-sight"
-                            id="course_{{ course.id }}"
-                            {% if course.selected == 1 %} checked{% endif %}
-                    >
-                    <label
-                            for="course_{{ course.id }}"
-                            class="course-label{% if 0 == course.wpf %} course-wpf{% endif %}"
-                    >
-                        <span class="course-name">{{ course.name }}</span>
-                        <span class="course-semester">{{ course.semester }}</span>
-                    </label>
-                </div>
+                {% for course in form.course.vars.choices %}
+                    {% set attrs = course.attr|merge({
+                        class: (course.attr.class|default('') ~ ' ' ~ courseLabelCssClass)|trim
+                    }) %}
+                    {#                    <div class="course-button{% if 0 == course.assignable %} course-notassignable{% endif %}"> #}
+                    <div class="course-button">
+                        <input
+                                type="checkbox"
+                                name="form[course][]"
+                                value="{{ course.value }}"
+                                class="out-of-sight"
+                                id="course_{{ course.value }}"
+                                {% if course.value in form.course.vars.data %}checked{% endif %}
+                        >
+                        <label for="course_{{ course.value }}" {% for attrName, attrValue in attrs %}{{ attrName }}="{{ attrValue }}"{% endfor %}>
+                            {{ course.label|raw }}
+                        </label>
+                    </div>
                 {% endfor %}
             </div>
-            <aside class="settings">
-                <div class="settings-box">
-                    <h3 class="settings-box-title">Legende</h3>
-                    <ul class="legend">
-                        <li class="legend-item">
-                            <span class="legend-color legend-color-white">&nbsp;</span>
-                            <span class="legend-label">Pflichtmodul</span>
-                        </li>
-                        <li class="legend-item">
-                            <span class="legend-color legend-color-white course-notassignable">&nbsp;</span>
-                            <span class="legend-label">nicht dieses Semester<!-- angeboten --></span>
-                        </li>
-                        <li class="legend-item">
-                            <span class="legend-color legend-color-grey">&nbsp;</span>
-                            <span class="legend-label">Wahlpflichtmodul</span>
-                        </li>
-                        <li class="legend-item">
-                            <span class="legend-color legend-color-teal">&nbsp;</span>
-                            <span class="legend-label">Modul bestanden</span>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
+            {{ form_widget(form._token) }}
         </form>
+        <aside class="settings">
+            <div class="settings-box">
+                <h3 class="settings-box-title">Legende</h3>
+                <ul class="legend">
+                    <li class="legend-item">
+                        <span class="legend-color legend-color-white">&nbsp;</span>
+                        <span class="legend-label">Pflichtmodul</span>
+                    </li>
+                    <li class="legend-item">
+                        <span class="legend-color legend-color-white course-notassignable">&nbsp;</span>
+                        <span class="legend-label">nicht dieses Semester<!-- angeboten --></span>
+                    </li>
+                    <li class="legend-item">
+                        <span class="legend-color legend-color-grey">&nbsp;</span>
+                        <span class="legend-label">Wahlpflichtmodul</span>
+                    </li>
+                    <li class="legend-item">
+                        <span class="legend-color legend-color-teal">&nbsp;</span>
+                        <span class="legend-label">Modul bestanden</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript">
-        $("#courseform").on("change", 'input[type="checkbox"]', function(){
+        $("#courseform").on("change", 'input[type="checkbox"]', function () {
             $(this).closest("form").submit();
         });
     </script>
