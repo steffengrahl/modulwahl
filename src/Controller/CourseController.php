@@ -7,16 +7,14 @@ namespace App\Controller;
 use App\Steffen\Courses;
 use App\Steffen\Semester;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class CourseController extends AbstractController
 {
-    /**
-     * @Route("/")
-     */
+    #[Route('/', name: 'course_index', methods: ['GET', 'POST'])]
     public function showCourseSelector(Request $request): Response
     {
         $semester = new Semester();
