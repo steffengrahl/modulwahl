@@ -23,6 +23,10 @@ jobs:
           extensions: mbstring, intl, xml
           coverage: xdebug
 
+      # 9️⃣ .env Datei sicherstellen (Umgebungsvariablen für CI)
+      - name: Copy .env.test to .env
+        run: cp .env.test .env || true
+
       # 3️⃣ Composer Cache
       - name: Cache Composer dependencies
         uses: actions/cache@v3
@@ -51,10 +55,6 @@ jobs:
       # 8️⃣ Linting / Static Analysis
       - name: Lint PHP files (PHP_CodeSniffer)
         run: vendor/bin/phpcs --standard=PSR12 --extensions=php src/
-
-      # 9️⃣ .env Datei sicherstellen (Umgebungsvariablen für CI)
-      - name: Copy .env.test to .env
-        run: cp .env.test .env || true
 
       # 🔟 PHPUnit Tests mit Coverage
       - name: Run PHPUnit with Coverage
