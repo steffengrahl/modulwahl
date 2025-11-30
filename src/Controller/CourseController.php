@@ -40,7 +40,7 @@ class CourseController extends AbstractController
 
                 },
                 'choice_attr' => function ($choice, $key, $value) use ($courses) {
-                    if (array_column($courses, 'wpf', 'id')[$choice] === 0) {
+                    if (!array_column($courses, 'wpf', 'id')[$choice]) {
                         return ['class' => 'course-wpf'];
                     }
 
@@ -77,7 +77,7 @@ class CourseController extends AbstractController
 
                     },
                     'choice_attr' => function ($choice, $key, $value) use ($courses) {
-                        if (array_column($courses, 'wpf', 'id')[$choice] === 0) {
+                        if (!array_column($courses, 'wpf', 'id')[$choice]) {
                             return ['class' => 'course-wpf'];
                         }
 
