@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+         colors="true"
+         verbose="true"
+         backupGlobals="false"
+         processIsolation="false">
+
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory>src</directory>
+        </include>
+        <report>
+            <clover outputFile="tests/_output/clover.xml"/>
+            <html outputDirectory="tests/_output/coverage-html"/>
+            <text outputFile="tests/_output/coverage.txt"/>
+        </report>
+    </coverage>
+</phpunit>

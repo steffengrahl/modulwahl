@@ -17,9 +17,10 @@ class CourseController extends AbstractController
     #[Route('/', name: 'course_index', methods: ['GET', 'POST'])]
     public function showCourseSelector(Request $request): Response
     {
+        $courseService = new Courses($this->getParameter('courses'));
         $semester = new Semester();
         $page_subtitle = 'Sommersemester ' . $semester->getYear();
-        $courses = (new Courses())->fetch([], $semester->getCurrent());
+        $courses = $courseService->fetch([], $semester->getCurrent());
         $choices = [];
 
         foreach ($courses as $course)
@@ -56,7 +57,7 @@ class CourseController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $selectedCourses = $form->get('course')->getData() ?? [];
-            $courses = (new Courses())->fetch($selectedCourses, $semester->getCurrent());
+            $courses = $courseService->fetch($selectedCourses, $semester->getCurrent());
             $choices = [];
 
             foreach ($courses as $course)
