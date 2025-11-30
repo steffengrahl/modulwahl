@@ -40,24 +40,36 @@ jobs:
       - name: Security Check
         run: composer audit
 
-      # 6️⃣ Linting / Static Analysis
+      # 6️⃣ PHPStan Analyse (Statische Analyse)
       - name: PHPStan Analysis
         run: vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=2G
 
-      # 7️⃣ PHPUnit Tests mit Coverage
+      # 7️⃣ PHPCS (PHP Coding Standards)
+      - name: PHP Coding Standards Check (PHPCS)
+        run: vendor/bin/phpcs --standard=PSR12 src/
+
+      # 8️⃣ Linting / Static Analysis
+      - name: Lint PHP files (PHP_CodeSniffer)
+        run: vendor/bin/phpcs --standard=PSR12 --extensions=php src/
+
+      # 9️⃣ .env Datei sicherstellen (Umgebungsvariablen für CI)
+      - name: Copy .env.test to .env
+        run: cp .env.test .env || true
+
+      # 🔟 PHPUnit Tests mit Coverage
       - name: Run PHPUnit with Coverage
         run: |
           mkdir -p tests/_output
           vendor/bin/phpunit --colors=always --coverage-html tests/_output/coverage-html --log-junit tests/_output/junit.xml
 
-      # 8️⃣ Upload PHPUnit HTML Coverage Report
+      # 1️⃣1️⃣ Upload PHPUnit HTML Coverage Report
       - name: Upload PHPUnit Coverage HTML
         uses: actions/upload-artifact@v4
         with:
           name: phpunit-coverage-html
           path: tests/_output/coverage-html
 
-      # 9️⃣ Upload PHPUnit JUnit XML (optional für CI-Integration)
+      # 1️⃣2️⃣ Upload PHPUnit JUnit XML (optional für CI-Integration)
       - name: Upload PHPUnit JUnit XML
         uses: actions/upload-artifact@v4
         with:
