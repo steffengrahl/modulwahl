@@ -10,7 +10,8 @@ class Courses
      * @param array<int, array<string, mixed>> $courses
      */
     public function __construct(private array $courses)
-    {}
+    {
+    }
 
     /**
      * @param array<int> $selected_courses
@@ -27,7 +28,6 @@ class Courses
 
         foreach ($this->courses as $course) {
             if (count(array_diff($course['conditions'], $get_conditions)) === 0) {
-
                 $courses[] = [
                     'id' => $course['id'],
                     'name' => $course['name'],

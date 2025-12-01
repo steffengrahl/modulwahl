@@ -23,8 +23,7 @@ class CourseController extends AbstractController
         $courses = $courseService->fetch([], $semester->getCurrent());
         $choices = [];
 
-        foreach ($courses as $course)
-        {
+        foreach ($courses as $course) {
             $choices[$course['name']] = $course['id'];
         }
 
@@ -38,7 +37,6 @@ class CourseController extends AbstractController
                         <span class="course-name">{$key}</span>
                         <span class="course-semester">{$semester}</span>
                         HTML;
-
                 },
                 'choice_attr' => function ($choice, $key, $value) use ($courses) {
                     if (!array_column($courses, 'wpf', 'id')[$choice]) {
@@ -60,8 +58,7 @@ class CourseController extends AbstractController
             $courses = $courseService->fetch($selectedCourses, $semester->getCurrent());
             $choices = [];
 
-            foreach ($courses as $course)
-            {
+            foreach ($courses as $course) {
                 $choices[$course['name']] = $course['id'];
             }
 
@@ -75,7 +72,6 @@ class CourseController extends AbstractController
                         <span class="course-name">{$key}</span>
                         <span class="course-semester">{$semester}</span>
                         HTML;
-
                     },
                     'choice_attr' => function ($choice, $key, $value) use ($courses) {
                         if (!array_column($courses, 'wpf', 'id')[$choice]) {
