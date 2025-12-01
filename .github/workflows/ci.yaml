@@ -27,6 +27,10 @@ jobs:
       - name: Copy .env.test to .env
         run: cp .env.test .env || true
 
+      # 9️⃣ .env Datei sicherstellen (Umgebungsvariablen für CI)
+      - name: Copy phpstan.dist.neon to phpstan.neon
+        run: cp phpstan.dist.neon phpstan.neon || true
+
       # 3️⃣ Composer Cache
       - name: Cache Composer dependencies
         uses: actions/cache@v3
