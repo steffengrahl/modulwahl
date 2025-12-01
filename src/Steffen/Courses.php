@@ -6,9 +6,16 @@ namespace App\Steffen;
 
 class Courses
 {
-    public function __construct(private readonly array $courses)
+    /**
+     * @param array<int, array<string, mixed>> $courses
+     */
+    public function __construct(private array $courses)
     {}
 
+    /**
+     * @param array<int> $selected_courses
+     * @return array<int, array<string, mixed>>
+     */
     public function fetch(array $selected_courses, string $semester): array
     {
         $courses = [];

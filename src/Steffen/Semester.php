@@ -8,9 +8,9 @@ use DateTime;
 
 class Semester
 {
-    private $date_now;
-    private $date_ws;
-    private $date_ss;
+    private \DateTime $date_now;
+    private \DateTime $date_ws;
+    private \DateTime $date_ss;
 
     public function __construct()
     {
