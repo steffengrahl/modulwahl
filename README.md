@@ -13,6 +13,7 @@ __Prerequisites__
 * PHP 8.1
 * nginx
 * MySQL 5.7
+* composer
 
 Or Docker compose installed on the machine. A configuration is part of this repo.
 
