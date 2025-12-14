@@ -31,7 +31,7 @@ This software is released under MIT license. To see all conditions have a look a
 Contribution
 ---
 
-Please do not contribute. This is just a proof-of-concept to demonstrate how I would start an app like this. I will not accept any pull requests.
+Please do not contribute. This is just a proof-of-concept to demonstrate how I would start an app like this. I will not accept any issues or pull requests.
 
 Authors
 ---
